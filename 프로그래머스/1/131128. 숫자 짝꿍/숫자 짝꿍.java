@@ -1,37 +1,34 @@
 class Solution {
     public String solution(String X, String Y) {
         String answer = "";
-        
+
         StringBuilder sb = new StringBuilder();
-        
-        int[] xArr = new int[10];
-        int[] yArr = new int[10];
-        
-        for(String x : X.split("")){
-            xArr[Integer.parseInt(x)]++;
+        int[] x = new int[10];
+        int[] y = new int[10];
+
+        for(String s: X.split("")){
+            x[Integer.parseInt(s)]++;
         }
-        for(String y : Y.split("")){
-            yArr[Integer.parseInt(y)]++;
+        for(String s: Y.split("")){
+            y[Integer.parseInt(s)]++;
         }
-        
-        for(int i = 9 ; i >= 0 ; i--){
-            
-            while(xArr[i]>0 && yArr[i]>0){
+
+        for(int i =0; i<=9; i++){
+            while(x[i] >0 && y[i] >0){
                 sb.append(i);
-                
-                xArr[i]--;
-                yArr[i]--;
+                x[i]--;
+                y[i]--;
             }
         }
-        
-        if(sb.toString().startsWith("0")){
-            return "0";
-        } else if(sb.toString().equals("")){
-            return "-1";
+
+        if (sb.toString().isEmpty()){
+            return  "-1";
+        }else if (sb.toString().replaceAll("0","").isEmpty() ){
+            return   "0";
         }
-        
-        answer = sb.toString();
-        
+
+        answer = sb.reverse().toString();
+
         return answer;
     }
 }
