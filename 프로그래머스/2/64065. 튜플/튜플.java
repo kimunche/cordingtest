@@ -8,12 +8,7 @@ class Solution {
 
         String str[] = s.split("-");
 
-        Arrays.sort(str, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return Integer.compare(o1.length(), o2.length());
-            }
-        });
+        Arrays.sort(str, (a,b) -> {return a.length() - b.length();});
 
         for(String st : str){
             String[] temp = st.split(",");
