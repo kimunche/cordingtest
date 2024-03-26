@@ -8,6 +8,7 @@ class Solution {
 
         String str[] = s.split("-");
 
+        //문자열 길이를 기준으로 정렬
         Arrays.sort(str, (a,b) -> {return a.length() - b.length();});
 
         for(String st : str){
