@@ -16,7 +16,7 @@ public class Main {
             list.add(Integer.parseInt(br.readLine()));
         }
 
-        list.sort(Integer::compareTo);
+        Collections.sort(list);
 
         for(int val : list){
             sb.append(val).append('\n');
